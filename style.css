@@ -1,0 +1,42 @@
+button {
+  padding: 0.3rem;
+  background-color: coral;
+  border-radius: 8px;
+  border-color: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+  flex-wrap: wrap;
+}
+
+.box {
+  height: 150px;
+  width: 150px;
+  border-radius: 5px;
+  box-shadow: 2px 4px 4px grey;
+  border-color: transparent;
+  padding: 1rem;
+  margin: 0.5rem;
+  color: white;
+  font-size: 20px;
+}
+
+.box-red {
+  background-color: red;
+}
+.box-green {
+  background-color: green;
+}
+
+p,
+li {
+  margin: 0.5rem;
+  font-size: 30px;
+  padding: 0.5rem;
+  /* color:; */
+}
