@@ -234,6 +234,34 @@ function groupByAge() {
   )}</p>`;
 }
 
+// Promise.all (Static method)
+// Promise.all takes in an array of promises . It returns 1 single promise as a result of resolving of all the promises.
+// Promise.all rejects if any of the promise is rejected
 
-// Promise.all 
-//
+let p1 = Promise.resolve('I am awesome');
+let p2 = new Promise((res, rej) => {
+  setTimeout(() => {
+    let totalItem = 0;
+    totalItem = [3, 4, 5, 6, 7].reduce((total, item) => {
+      return total + item;
+    }, 0);
+    res(totalItem);
+  }, 2000);
+});
+
+let p3 = Promise.reject(new Error('p2_immediate_rejection'));
+let p3 = Promise.resolve(93277823);
+
+document.getElementById('prom').addEventListener('click', () => {
+  Promise.all([p1, p2, p3])
+    .then((data) => {
+      document.getElementById(
+        'projectData'
+      ).innerHTML = `<p style="color:darkgreen"> Total price of items ${data}</p>`;
+    })
+    .catch((err) => {
+      document.getElementById(
+        'projectData'
+      ).innerHTML = `<p style="color:darkgreen"> Total price of items ${err}</p>`;
+    });
+});
